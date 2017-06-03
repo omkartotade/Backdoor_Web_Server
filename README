@@ -1,0 +1,17 @@
+Description-
+
+
+
+normal_web_server is a regular HTTP 1.1 server that can be used to service normal HTTP 1.1 requests.
+
+The catch here is, it acts as a backdoor which pretends to be a web server. This can be beneficial to hackers. A similar system can be hidden somewhere on a server to make it a backdoor for the hackers to hack into the system and execute any shell command.
+
+
+My program accepts valid HTTP 1.1 requests, and responds to them with 200 OK replies. In case the request is not a valid HTTP 1.1 or a GET request, the program responds by sending a 404 Not Found response.
+
+
+For valid HTTP 1.1 requests, the program basically looks for the /exec/ keyword and executes the command that follows /exec/ in linux shell and responds with the output of the command.
+
+For every valid request the program responds with a 'HTTP/1.1 200 OK' response and for every invalid request it responds with a 'HTTP/1.1 Not Found' response.
+
+The program can also handle multiple client requests simultaneously.
